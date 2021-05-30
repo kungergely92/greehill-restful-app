@@ -2,11 +2,16 @@ import flask
 from datetime import datetime
 import psutil
 import json
+from json import JSONEncoder
 import os
 
-class HWSerial(dict):
+class MyJsonEncoder(JSONEncoder):
+    def default(self, o):
+        return o.__dict__
+
+class HWSerial:
     def __init__(self, param:str):
-        dict.__init__(self, param=param)
+        self.param = param
 
 app = flask.Flask(__name__)
 
@@ -20,7 +25,7 @@ def get_cpu_uti():
 
 @app.route('/api/v1/serializer/<param>', methods=['GET'])
 def get_serialized_object(param):
-    return json.dumps(HWSerial(param))
+    return json.dumps(cls=MyJsonEncoder, obj=HWSerial(param))
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
