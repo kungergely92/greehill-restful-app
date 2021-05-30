@@ -17,15 +17,15 @@ app = flask.Flask(__name__)
 
 @app.route('/api/v1/time', methods=['GET'])
 def get_time_in_utc():
-    return str(datetime.utcnow())
+    return str(datetime.utcnow()) + '\n'
 
 @app.route('/api/v1/status', methods=['GET'])
 def get_cpu_uti():
-    return f'{psutil.cpu_percent(interval=1)} %'
+    return f'{psutil.cpu_percent(interval=1)} %\n'
 
 @app.route('/api/v1/serializer/<param>', methods=['GET'])
 def get_serialized_object(param):
-    return json.dumps(cls=MyJsonEncoder, obj=HWSerial(param))
+    return json.dumps(cls=MyJsonEncoder, obj=HWSerial(param)) + '\n'
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
