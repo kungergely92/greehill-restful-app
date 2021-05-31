@@ -1,0 +1,17 @@
+deployment:
+  replicas: 2
+  metadata:
+    labels:
+      app: flask
+
+image:
+  repository: gregorius92/flask-rest-api-demo
+  tag: latest
+
+service:
+  name: flask-service
+  port: 80 
+  targetPort: 5000
+
+ingress:
+  host: restapi.example.com
