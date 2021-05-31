@@ -14,25 +14,25 @@ A simple containerized API implemented in Python, with K8S manifests, and Helm c
 
 Then use
 
-`kubectl get ingress`
+`kubectl get ingress --watch`
 
-and wait for the Ingress to be deployed and its IP address ready. Then update your /etc/host file or DNS to redirect your chosen host name to that IP address.
+and wait for the Ingress to be deployed. Once its IP address is ready you can update your /etc/host file or DNS to redirect your chosen host name to that IP address.
 
 After that the API will be available under your given hostname.
 
 ## Usage
 
-The API has three endpoints. You can try them out the following way (using the default hostname described in `values.yaml`)
+The API has three endpoints which can be invoked the following way (using the default hostname described in `values.yaml`)
 
-Return the current time in UTC:
+Returns the current time in UTC:
 
 `curl restapi.example.com/api/v1/time`
 
-Return CPU utilization of the instance running the API:
+Returns CPU utilization of the instance running the API:
 
 `curl restapi.example.com/api/v1/status`
 
-Return a json serialized `HWSerial` object with a given string parameter:
+Returns a json serialized `HWSerial` object with a given string parameter:
 
 `curl restapi.example.com/api/v1/serializer/<string-parameter>`
 
