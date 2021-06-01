@@ -35,5 +35,3 @@ Returns CPU utilization of the instance running the API:
 Returns a json serialized `HWSerial` object with a given string parameter:
 
 `curl restapi.example.com/api/v1/serializer/<string-parameter>`
-
-
