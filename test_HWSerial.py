@@ -5,7 +5,7 @@ host = 'http://127.0.0.1:5000'
 
 def test_time_response():
     """
-    GIVEN: A Flask application running on the host defined above
+    GIVEN: The Flask API application running on the host defined above
     WHEN: the /api/v1/time endpoint is invoked
     THEN: the response shall have a status code of 200
     """
@@ -14,7 +14,7 @@ def test_time_response():
 
 def test_status_response():
     """
-    GIVEN: A Flask application running on the host defined above
+    GIVEN: The Flask API application running on the host defined above
     WHEN: the /api/v1/status endpoint is invoked
     THEN: the response shall have a status code of 200
     """
@@ -23,7 +23,7 @@ def test_status_response():
 
 def test_serializer_response():
     """
-    GIVEN: A Flask application running on the host defined above
+    GIVEN: The Flask API application running on the host defined above
     WHEN: the /api/v1/serializer/test-string endpoint is invoked
     THEN: the response shall have a status code of 200
     """
@@ -32,7 +32,7 @@ def test_serializer_response():
 
 def test_serializer_json_response():
     """
-    GIVEN: A Flask application running on the host defined above
+    GIVEN: The Flask API application running on the host defined above
     WHEN: the /api/v1/serializer/test-string endpoint is invoked
     THEN: the response shall be in a json format having a "param" key with a value of "test-string"
     """
