@@ -32,7 +32,7 @@ def test_serializer_response():
 
 def test_serializer_json_response():
     """
-    GIVEN: A Flask application running on the host defined above
+    GIVEN: The Flask API application running on the host defined above
     WHEN: the /api/v1/serializer/test-string endpoint is invoked
     THEN: the response shall be in a json format having a "param" key with a value of "test-string"
     """
